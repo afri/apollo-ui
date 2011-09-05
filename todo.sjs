@@ -23,7 +23,7 @@ function count(arr, condition) {
 
 function todo(item, uiparent) {
   using (var ui = UI.show("
-<li foo='1'><input type='checkbox' @checked='{done}' mid='cb'><span>{text}</span></li>", 
+<li><input type='checkbox' @checked='{done}' mid='cb'><span>{text}</span></li>", 
                           uiparent)) {
     UI.supplant(ui, item);
     while (1) {
