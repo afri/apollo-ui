@@ -7,9 +7,9 @@
     var ui = UI.show("
       <h2>Pythagoras {formula}</h2>
       <div mid='inputs'>
-        a^2 = <input type='text' mid='a' value='1'><br>
-        b^2 = <input type='text' mid='b' value='1'><br>
-        c^2 = <input type='text' mid='c' value='2'><br>
+        a = <input type='text' mid='a' value='3'><br>
+        b = <input type='text' mid='b' value='4'><br>
+        c = <input type='text' mid='c' value='5'><br>
       </div>
 ");
 
@@ -31,15 +31,15 @@
     // the formula accordingly:
     switch (inputs) {
     case 'ab': case 'ba':
-      ui.elems.c.value = Math.pow(ui.elems.a.value,2) + Math.pow(ui.elems.b.value,2);
+      ui.elems.c.value = Math.sqrt(Math.pow(ui.elems.a.value,2) + Math.pow(ui.elems.b.value,2));
       formula = "c^2 = a^2 + b^2";
       break;
     case 'ac': case 'ca':
-      ui.elems.b.value = Math.pow(ui.elems.c.value,2) - Math.pow(ui.elems.a.value,2);
+      ui.elems.b.value = Math.sqrt(Math.pow(ui.elems.c.value,2) - Math.pow(ui.elems.a.value,2));
       formula = "b^2 = c^2 - a^2";
       break;
     case 'bc': case 'cb':
-      ui.elems.a.value = Math.pow(ui.elems.c.value,2) - Math.pow(ui.elems.b.value,2);
+      ui.elems.a.value = Math.sqrt(Math.pow(ui.elems.c.value,2) - Math.pow(ui.elems.b.value,2));
       formula = "a^2 = c^2 - b^2";
     }
   }
